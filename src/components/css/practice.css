@@ -1,0 +1,10 @@
+.veg{
+    background-color: greenyellow;
+    height:100px;
+    width: 100px;
+}
+.nonVeg{
+    background-color: rgb(225, 82, 82);
+    height:100px;
+    width: 100px;
+}

@@ -1,15 +1,18 @@
 import './css/Card.css'
-import blog_image from './images/blog_image.jpeg'
 
-function Card(){
+function Card(props){
+    const title = props.title;
+   
+    var img_src = props.imageid;;
+    
     return(
         <div className="card">
                 <div className="card-top">
-                    <img src={blog_image} alt="" className="blog-img"></img>
+                    <img src={img_src} alt="" className="blog-img"></img>
                 </div>
                 <div className="card-bottom">
                     <div className="bottom-top">
-                        <h2 className="title">Know ChatGpt</h2>
+                        <h2 className="title">{title}</h2>
                         <a  href="Blog/index.html" className="read-btn">Read more</a>
                     </div>
                     <div className="bottom-bottom">
