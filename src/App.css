@@ -66,3 +66,27 @@
   align-items: center;
   flex-direction: column;
 }
+
+.light{
+  background-color: #dcffcb;
+  color: #000000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dark{
+  background-color: #000000;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  width:30px;
+  height: 30px;
+}
