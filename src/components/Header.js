@@ -7,9 +7,9 @@ function Header(){
             <h2 className="heading">RT-Blogs</h2>
         </div>
         <div className="right">
-            <a href="#" className="link">Home</a>
-            <a href="Post/index.html" class="link">Post</a>
-            <a href="ContactUs/index.html" class="link">Contact Us</a>
+            <a href="/" className="link">Home</a>
+            <a href="/blog" class="link">Post</a>
+            <a href="/contact" class="link">Contact Us</a>
         </div>
     </nav>
     )
