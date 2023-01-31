@@ -1,9 +1,15 @@
-import { useState } from 'react';
-import './css/Card.css'
-import axios from 'axios';
-function Card(props){
+import ContactUs from "../../ContactUs";
+import Footer from "../../Footer";
+import Header from "../../Header";
+import default_image from "../../../App";
+import repeat from "../../../App";
+import Card from "../../Card";
+import axios from "axios";
+import { useState } from "react";
 
-   
+function Blog(props) {
+
+       
     var img_src = props.imageid;;
     
     const [title,setTitle] = useState('');
@@ -12,8 +18,10 @@ function Card(props){
         setTitle(res.data.title);
     });
 
-    return(
-        <div className="card">
+    return (
+        <>
+            <Header></Header>
+            <div className="card">
                 <div className="card-top">
                     <img src={img_src} alt="" className="blog-img"></img>
                 </div>
@@ -36,7 +44,8 @@ function Card(props){
                     </div>
                 </div>
             </div>
-    );
+            <Footer></Footer>
+        </>
+    )
 }
-
-export default Card;
+export default Blog;

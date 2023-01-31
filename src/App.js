@@ -12,32 +12,17 @@ import corona_image from './components/images/corona.jpeg'
 import default_image from './components/images/default.jpeg'
 
 import { useState } from 'react';
+import axios from 'axios'
+import Home from './components/Pages/Home/Home';
+import Contact from './components/Pages/Contact/Contact';
+import About from './components/Pages/About/About';
+import Blog from './components/Pages/Blog/Blog';
+import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
+
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 
 function App() {
-
-  let card = [
-    {
-      title: "Crypto",
-      images: default_image
-    },
-    {
-      title: "ChatGPT",
-      images: blog_image
-    },
-    {
-      title: "Corona",
-      images: corona_image
-    },
-    {
-      title: "Ind Vs Nz",
-      images: cricket_image
-    },
-    {
-      title: "Default",
-      images: default_image
-    },
-  ];
 
   var a = "IND vs NZ";
   var [theme, setTheme] = useState("light")
@@ -155,10 +140,50 @@ function App() {
 
   }
 
+
+  // const [fullName, setFullName] = useState(' ');
+  // for(let i=0;i<6;i++){
+  //   axios.get('https://jsonplaceholder.typicode.com/posts/'+i)
+  //   .then(res=>{
+  //       // var first=res.data.results[0].name.first
+  //       // var last =res.data.results[0].name.last
+  //       // console.log(first+" "+last);
+
+  //       setFullName(res.data.title);
+
+  //       // document.getElementById("data").innerHTML=res.data.results;
+  //   });
+  // }
+  let card = [
+    {
+      title: "Crypto",
+      images: default_image
+    },
+    {
+      title: "ChatGPT",
+      images: blog_image
+    },
+    {
+      title: "Corona",
+      images: corona_image
+    },
+    {
+      title: "Ind Vs Nz",
+      images: cricket_image
+    },
+    {
+      title: "Default",
+      images: default_image
+    },
+  ];
+
+  let repeat = [1, 2, 3, 4, 5]
+  let pagenation = [1, 2, 3, 4, 5]
   return (
     <div className="App">
-      <div className="main-ctn">
-        <Header></Header>
+      {/* <div className="main-ctn"> */}
+        {/* <Header></Header> */}
+        {/* <h1>{fullName}</h1> */}
         {/* <div className={theme}>
           <h1>{a}</h1>
           <h3>IND : {score}/{wickets}</h3>
@@ -173,16 +198,33 @@ function App() {
           <button onClick={out} >Out</button>
           <h6>{matchStatus}</h6>
         </div> */}
-        <div className="content-ctn">
-          {/* <Practice ite="veg"></Practice> */}
+        {/* <div className="content-ctn">
+          <Practice ite="veg"></Practice>
           {
-            card.map(v => (
-              <Card title={v.title} imageid={v.images}></Card>
+            repeat.map(v => (
+              <Card num={v} imageid={default_image}></Card>
             ))
+
           }
-        </div>
-        <ContactUs></ContactUs>
-      </div>
+
+        </div> */}
+        {/* <ContactUs></ContactUs> */}
+
+      {/* </div> */}
+        {/* <Home></Home> */}
+        {/* <Contact></Contact> */}
+        {/* <About></About> */}
+        {/* <Blog></Blog> */}
+
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
+            <Route path='/about' element={<About></About>} ></Route>
+            <Route path='/contact' element={<Contact></Contact>} ></Route>
+            <Route path='/blog' element={<Blog></Blog>} ></Route>
+            <Route path='*' element={<PageNotFound></PageNotFound>} ></Route>
+          </Routes>
+        </BrowserRouter>
 
     </div>
   );
